@@ -5,31 +5,34 @@ def get_pet_shop_name(pet_shop):
 def get_total_cash(pet_shop):
     return pet_shop["admin"]["total_cash"]
 
-def get_total_cash(total_cash):
-    total_cash_result = total_cash(["admin"]["total cash"] +10)
-    return total_cash_result
+def add_or_remove_cash(pet_shop, cash):
+    pet_shop["admin"]["total_cash"] += cash
 
-def get_total_cash(total_cash):
-    total_cash_result = total_cash(["admin"]["total_cash"] -10)
-    return total_cash_result
+    
+    
+
+
 
 def get_pets_sold(pets_sold):
     return pets_sold["admin"]["pets_sold"]
 
-def increase_pets_sold(pets_sold,):
-    return pets_sold["admin"]["pets_sold"] + 2
+def increase_pets_sold(pets_sold, number_sold):
+    pets_sold["admin"]["pets_sold"] += number_sold
 
 def get_stock_count(stock_count):
     stock_count = len(["pets"])
     return stock_count
 
-def get_pets_by_breed_found(pets_by_breed):
-    pets_by_breed = ["pets"]["breed"][0][1]
-    return pets_by_breed
+def get_pets_by_breed(pet_shop, breed):
+    basket = []
+    for pet in pet_shop["pets"]:
+        if pet["breed"] == breed:
+            basket.append(pet)
+    return basket
+            
 
-def get_pets_by_breed(breed):
-    breed = self.cc_pet_shop["pets"]["0"]
-    return Dalmation
+
+
 
 def find_pet_by_name(pet_shop):
     return pet_shop["pets"][3]["name"]
@@ -47,8 +50,8 @@ def find_pet_name(pet_shop, name):
             return name
         else:
             return None
-def get_stock_count(self_customers):
-    return self_customers[0]["cash"]
+def get_stock_count(pet_shop):
+    return len(pet_shop["pets"])
 
 def remove_customer_cash(self_customers):
         return self_customers[0]["cash"] - 100
